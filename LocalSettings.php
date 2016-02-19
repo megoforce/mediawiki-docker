@@ -129,3 +129,9 @@ wfLoadSkin( 'Vector' );
 
 # End of automatically generated settings.
 # Add more configuration options below.
+
+# Disable anonymous editing
+$wgGroupPermissions['*']['edit'] = false;
+
+# Prevent new user registrations except by sysops
+$wgGroupPermissions['*']['createaccount'] = false;
