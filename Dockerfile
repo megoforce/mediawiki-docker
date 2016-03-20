@@ -8,8 +8,7 @@ EXPOSE 80
 
 WORKDIR /var/www/html
 RUN wget https://releases.wikimedia.org/mediawiki/1.26/mediawiki-1.26.2.tar.gz
-RUN tar xvzf mediawiki-*.tar.gz 
-RUN mv -v mediawiki*/* .
+RUN tar xvzf mediawiki-*.tar.gz --strip-components=1 
 RUN rm /var/www/html/index.html
 RUN ln -sf /dev/stdout /var/log/apache2/error.log
 COPY LocalSettings.php /var/www/html/
